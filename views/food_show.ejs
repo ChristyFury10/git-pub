@@ -15,7 +15,7 @@
 <body>
     <h1>At Foo Bar</h1>
     <h2><%= food.name%></h2>
-    <img src="<%= food.image%>.png" alt = "food image", width = 150px>
+    <img src="<%= food.image.replace('jpg', 'png')%>" alt = "food image", width = 150px>
     <h3>Item price <%= food.price %></h3>
     <a href = "/foods">Back</a>
     
