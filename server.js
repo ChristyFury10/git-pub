@@ -1,11 +1,12 @@
 const express = require("express");
 const app= express();
 const drinks = require("./models/drinks");
+const foods = require("./models/food");
 app.set("view engine", "ejs");
 
 
 app.get("/", (req, res)=>{
-    res.send('Welcome to the Gitpub App!');
+    res.render("home_index")
 })
 
 
@@ -15,7 +16,17 @@ app.get("/drinks", (req, res)=>{
 })
 
 app.get("/drinks/:id", (req, res)=>{
-    res.send(req.params.id)
+    let drink = drinks[req.params.id]
+    res.render("drinks_show", {drink})
+})
+
+app.get("/foods", (req, res)=>{
+    res.render("food_index", {foods}) 
+
+})
+app.get("/foods/:id", (req, res)=>{
+    let food = foods[req.params.id]
+    res.render("food_show", {food})
 })
 
 app.listen(3000, ()=>{
