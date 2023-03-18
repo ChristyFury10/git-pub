@@ -10,7 +10,8 @@ app.get("/", (req, res)=>{
 
 
 app.get("/drinks", (req, res)=>{
-    res.render("drinks_index")
+    res.render("drinks_index", {drinks}) 
+
 })
 
 

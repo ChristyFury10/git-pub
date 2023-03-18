@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitPub</title>
-    
-</head>
-<body>
-    <h1>Welcome to gitPub</h1>
     <style type="text/css">
         body {
           color: blanchedalmond;
           background-color: steelblue;
         }
       </style>
+</head>
+<body>
+    <h1>Welcome to gitPub</h1>
+      <ul>
+        <% for (let i = 0; i < drinks.length ; i++){ %>
+            <li>
+                <h3>Drink name <%= drinks[i].name %></h3>
+                <h3>Drink price <%= drinks[i].price %></h3>
+                <img src="<%= drinks[i].image %>">
+            </li>
+       <% } %>
+      </ul>
     
 </body>
 </html>
