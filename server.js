@@ -1,6 +1,7 @@
 const express = require("express");
 const app= express();
-const drinks = require("./models/drinks")
+const drinks = require("./models/drinks");
+app.set("view engine", "ejs");
 
 
 app.get("/", (req, res)=>{
@@ -9,10 +10,8 @@ app.get("/", (req, res)=>{
 
 
 app.get("/drinks", (req, res)=>{
-    res.send(drinks)
+    res.render("drinks_index")
 })
-
-
 
 
 
