@@ -17,9 +17,10 @@
       <ul>
         <% for (let i = 0; i < drinks.length ; i++){ %>
             <li>
-                <h3>Drink name <%= drinks[i].name %></h3>
-                <h3>Drink price <%= drinks[i].price %></h3>
-                <img src="<%= drinks[i].image %>">
+                <% let drink = drinks[i].name.slice(0,1).toUpperCase() + drinks[i].name.slice(1); %>
+                <h3>Drink name: <a href = "/drinks/<%= i %>"><%= drink %></a></h3>
+                <!-- <h3>Drink price <%= drinks[i].price %></h3>
+                <img src="<%= drinks[i].image %>" alt = "drink image", width = 150px> -->
             </li>
        <% } %>
       </ul>
