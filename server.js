@@ -1,5 +1,6 @@
 const express = require("express");
 const app= express();
+const drinks = require("./models/drinks")
 
 
 app.get("/", (req, res)=>{
@@ -7,7 +8,9 @@ app.get("/", (req, res)=>{
 })
 
 
-
+app.get("/drinks", (req, res)=>{
+    res.send(drinks)
+})
 
 
 
